@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =========================
     Variables
 ========================= */
@@ -94,6 +95,33 @@ body {
   text-shadow: 0px 0px 5px #0E5ED3;
 }
 
+.page-section {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 80px 0;
+}
+
+.vision__image {
+  max-width: 1000px;
+  width: 100%;
+  background-image: url("./img/top/vision.jpg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 16px;
+}
+.vision__content {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+.vision__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.8;
+}
+
 .footer {
   max-width: 1366px;
   width: 100%;
@@ -166,4 +194,29 @@ body {
   .menu-button__bar {
     width: 12px;
   }
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+}
+.section-header__title {
+  font-size: 50px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: #236DE3;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+}
+.section-header__lead {
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+.section-header__lead::before {
+  content: "ー";
+  font-weight: normal;
+  margin-right: 4px;
 }/*# sourceMappingURL=style.css.map */
