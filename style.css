@@ -24,6 +24,10 @@ body {
   padding: 0;
 }
 
+a {
+  color: inherit;
+}
+
 /* =========================
     Layout
 ========================= */
@@ -31,7 +35,7 @@ body {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 80px 0;
+  padding: 120px 80px 80px 80px;
 }
 
 .header {
@@ -47,14 +51,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-}
-.header__logo {
-  display: block;
-  width: 173px;
-}
-.header__logo img {
-  width: 100%;
   height: 100%;
 }
 
@@ -102,24 +98,12 @@ body {
   text-shadow: 0px 0px 5px #0E5ED3;
 }
 
-.vision__image {
-  max-width: 1000px;
-  width: 100%;
-  background-image: url("./img/top/vision.jpg");
-  background-size: contain;
-  background-position: center;
-  border-radius: 16px;
+.mission {
+  background-color: #F7F9FC;
 }
-.vision__content {
-  display: flex;
-  gap: 32px;
-  margin-top: 32px;
-}
-.vision__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1.8;
+
+.contact {
+  background-color: #236DE3;
 }
 
 .footer {
@@ -195,11 +179,21 @@ body {
     width: 12px;
   }
 }
+.header__logo {
+  display: block;
+  width: 173px;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+}
+
 .section-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0px;
+  margin-bottom: 40px;
 }
 .section-header__title {
   font-size: 50px;
@@ -219,6 +213,26 @@ body {
   content: "ー";
   font-weight: normal;
   margin-right: 4px;
+}
+
+.vision__image {
+  max-width: 1000px;
+  width: 100%;
+  background-image: url("./img/top/vision.jpg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 16px;
+}
+.vision__content {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+.vision__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.8;
 }
 
 .mission__list {
@@ -242,4 +256,40 @@ body {
   font-size: 16px;
   letter-spacing: 2px;
   line-height: 30px;
+}
+.mission__signature-inner {
+  display: flex;
+  justify-content: flex-end;
+}
+.mission__signature-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mission__signature {
+  line-height: normal;
+  font-size: 15px;
+}
+.mission__signature-name {
+  margin-top: 0;
+  font-size: 25px;
+  letter-spacing: normal;
+  font-family: "YoMincho", serif;
+}
+
+.company dt, .company dd {
+  letter-spacing: 1.5px;
+}
+.company dt {
+  font-weight: bold;
+}
+.company__info {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+}
+.company__business ul {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
 }/*# sourceMappingURL=style.css.map */
