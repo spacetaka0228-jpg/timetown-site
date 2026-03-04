@@ -39,6 +39,14 @@ body {
 /* =========================
     Layout
 ========================= */
+
+.page-section {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 80px 0;
+}
+
 .header {
     width: 100%;
     height: $header-height;
@@ -117,12 +125,7 @@ body {
 
 }
 
-.page-section {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 80px 0;
-}
+
 
 .vision {
 
@@ -274,5 +277,35 @@ body {
             margin-right: 4px;
 
         }
+    }
+}
+
+.mission {
+
+    &__list {
+        list-style: none;
+    }
+
+    &__list--numbered {
+        counter-reset: mission-counter;
+    
+        li {
+            counter-increment: mission-counter;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            &::marker {
+                content: counter(mission-counter, decimal-leading-zero)" /  ";
+                font-size: 15px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        letter-spacing:2px;
+        line-height: 30px;
     }
 }

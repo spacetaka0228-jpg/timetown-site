@@ -27,6 +27,13 @@ body {
 /* =========================
     Layout
 ========================= */
+.page-section {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 80px 0;
+}
+
 .header {
   width: 100%;
   height: 80px;
@@ -93,13 +100,6 @@ body {
   line-height: 2;
   font-weight: bold;
   text-shadow: 0px 0px 5px #0E5ED3;
-}
-
-.page-section {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 80px 0;
 }
 
 .vision__image {
@@ -219,4 +219,27 @@ body {
   content: "ー";
   font-weight: normal;
   margin-right: 4px;
+}
+
+.mission__list {
+  list-style: none;
+}
+.mission__list--numbered {
+  counter-reset: mission-counter;
+}
+.mission__list--numbered li {
+  counter-increment: mission-counter;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mission__list--numbered li::marker {
+  content: counter(mission-counter, decimal-leading-zero) " /  ";
+  font-size: 15px;
+  font-weight: normal;
+}
+.mission__text {
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 30px;
 }/*# sourceMappingURL=style.css.map */
