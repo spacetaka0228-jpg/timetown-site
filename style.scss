@@ -12,6 +12,9 @@ $hero-left-width: 550px;
 $hero-right-width: 1187px;
 
 $primary-key-color: #236DE3;
+$gradient-color: #6EE2F5;
+$background-color1: #FFFFFF;
+$background-color2: #F7F9FC;
 
 
 /* =========================
@@ -31,7 +34,7 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     font-size: 16px;
     color: #333333;
-    background-color: #FFFFFF;
+    background-color: $background-color1;
     margin: 0;
     padding: 0;
 }
@@ -67,12 +70,6 @@ a {
     }
 }
 
-.main {
-    max-width: 1366px;
-    width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
-}
 
 .hero {
     position: relative;
@@ -83,7 +80,7 @@ a {
 
     &__left {
         flex: 0 0 $hero-left-width;
-        background: linear-gradient(to bottom,$primary-key-color,#6EC1FF);
+        background: linear-gradient(to bottom,$primary-key-color,$gradient-color);
         height: 100%;
         
         display: flex;
@@ -100,7 +97,7 @@ a {
     }
 
     &__title {
-    color: white;
+    color: #FFFFFF;
     z-index: 3;
     font-size: 40px;
     line-height: 1.5;
@@ -108,7 +105,7 @@ a {
     }
   
     &__description {
-    color: white;
+    color: #FFFFFF;
     z-index: 3;
     font-size: 16px;
     line-height: 2.0;
@@ -119,18 +116,23 @@ a {
 }
 
 .mission {
-    background-color: #F7F9FC;
-}
-
-.contact {
-    background-color: $primary-key-color;
+    background-color: $background-color2;
 }
 
 .footer {
-    max-width: 1366px;
-    width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
+
+    &__contact {
+        background-image: url(img/common/bg_pattern_02.png),
+        linear-gradient(to right, $primary-key-color, $gradient-color);
+    }
+
+    &__nav {
+        background-color: $primary-key-color;
+
+        .page-section {
+            padding-top: 50px;
+        }
+    }
 }
 
 
@@ -185,7 +187,7 @@ a {
     width: $menu-button-size;
     height: $menu-button-size;
     border-radius: 50%;
-    background-color: #FFFFFF;
+    background-color: $background-color1;
     border: none;
     opacity: 0.8;
     transition: opacity 0.3s ease;
@@ -264,6 +266,17 @@ a {
             font-weight: normal;
             margin-right: 4px;
 
+        }
+    }
+
+    &--white {
+        .section-header__title,
+        .section-header__lead {
+            color: #FFFFFF;
+        }
+
+        .section-header__lead::before {
+            content: "";
         }
     }
 }
@@ -367,5 +380,36 @@ a {
             line-height: 1.8;
         }
 
+    }
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    :hover {
+        opacity: 0.8;
+    }
+
+    &--full {
+        display: flex;
+    }
+
+    &--white {
+        background-color: #FFFFFF;
+        color: $primary-key-color;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $primary-key-color;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+        }
     }
 }
