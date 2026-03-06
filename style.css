@@ -98,6 +98,9 @@ a {
 .footer__contact {
   background-image: url(img/common/bg_pattern_02.png), linear-gradient(to right, #236DE3, #6EE2F5);
 }
+.footer__contact .page-section {
+  padding-top: 60px;
+}
 .footer__nav {
   background-color: #236DE3;
 }
@@ -162,22 +165,31 @@ a {
   display: none;
 }
 
-@media (max-width: 895px) {
-  .menu-button {
-    width: 40px;
-    height: 40px;
-  }
-  .menu-button__bar {
-    width: 12px;
-  }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.header__logo {
-  display: block;
-  width: 173px;
+.button :hover {
+  opacity: 0.8;
 }
-.header__logo img {
-  width: 100%;
-  height: 100%;
+.button--full {
+  display: flex;
+}
+.button--white {
+  background-color: #FFFFFF;
+  color: #236DE3;
+  font-weight: bold;
+}
+.button--white:hover {
+  background-color: #236DE3;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
 }
 
 .section-header {
@@ -212,6 +224,24 @@ a {
 }
 .section-header--white .section-header__lead::before {
   content: "";
+}
+
+@media (max-width: 895px) {
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+  .menu-button__bar {
+    width: 12px;
+  }
+}
+.header__logo {
+  display: block;
+  width: 173px;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
 }
 
 .vision__image {
@@ -276,46 +306,35 @@ a {
   font-family: "YoMincho", serif;
 }
 
-.company dt, .company dd {
-  letter-spacing: 1.5px;
-}
-.company dt {
-  font-weight: bold;
-}
 .company__info {
   display: grid;
   grid-template-columns: 70px 1fr;
   gap: 20px;
 }
-.company__business ul {
+.company__term {
+  font-weight: bold;
+}
+.company__term, .company__description {
+  letter-spacing: 1.5px;
+}
+.company__list {
   margin: 0;
   padding-left: 20px;
   line-height: 1.8;
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 0;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.button :hover {
-  opacity: 0.8;
-}
-.button--full {
-  display: flex;
-}
-.button--white {
-  background-color: #FFFFFF;
-  color: #236DE3;
-  font-weight: bold;
-}
-.button--white:hover {
-  background-color: #236DE3;
+.footer__nav {
   color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+}
+.footer__list {
+  list-style: none;
+}
+.footer__list a {
+  text-decoration: none;
+}
+.footer__list ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
 }/*# sourceMappingURL=style.css.map */

@@ -124,6 +124,10 @@ a {
     &__contact {
         background-image: url(img/common/bg_pattern_02.png),
         linear-gradient(to right, $primary-key-color, $gradient-color);
+
+        .page-section {
+            padding-top: 60px;
+        }
     }
 
     &__nav {
@@ -214,27 +218,33 @@ a {
     display: none;
 }
 
-@media (max-width: 895px) {
-    .menu-button {
-        width: $menu-button-size * 2 / 3;
-        height: $menu-button-size * 2 / 3;
-        
-        &__bar {
-            width: $bar-width * 2 / 3;
-        }
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    :hover {
+        opacity: 0.8;
     }
 
-}
+    &--full {
+        display: flex;
+    }
 
-.header {
+    &--white {
+        background-color: #FFFFFF;
+        color: $primary-key-color;
+        font-weight: bold;
 
-    &__logo {
-        display: block;
-        width: 173px;
-
-        & img {
-            width: 100%;
-            height: 100%;
+        &:hover {
+            background-color: $primary-key-color;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
         }
     }
 }
@@ -277,6 +287,31 @@ a {
 
         .section-header__lead::before {
             content: "";
+        }
+    }
+}
+
+@media (max-width: 895px) {
+    .menu-button {
+        width: $menu-button-size * 2 / 3;
+        height: $menu-button-size * 2 / 3;
+        
+        &__bar {
+            width: $bar-width * 2 / 3;
+        }
+    }
+
+}
+
+.header {
+
+    &__logo {
+        display: block;
+        width: 173px;
+
+        & img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
@@ -358,58 +393,47 @@ a {
 }
 
 .company {
-    dt, dd {
-        letter-spacing: 1.5px;
-    }
-
-    dt {
-        font-weight: bold;
-    }
-
+    
     &__info {
         display: grid;
         grid-template-columns: 70px 1fr;
         gap: 20px;
     }
+    
+    &__term {
+        font-weight: bold;
+    }
+    
+    &__term,
+    &__description {
+        letter-spacing: 1.5px;
+    }
 
-    &__business {
-        
-        ul {
+    &__list {
             margin: 0;
             padding-left: 20px;
             line-height: 1.8;
         }
-
-    }
 }
 
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 0;
-    border-radius: 50px;
-    border: 2px solid transparent;
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    :hover {
-        opacity: 0.8;
+.footer {
+    
+    &__nav {
+        color: #FFFFFF;
     }
 
-    &--full {
-        display: flex;
-    }
+    &__list {
+        list-style: none;
 
-    &--white {
-        background-color: #FFFFFF;
-        color: $primary-key-color;
-        font-weight: bold;
+        a {
+            text-decoration: none;
+        }
 
-        &:hover {
-            background-color: $primary-key-color;
-            color: #FFFFFF;
-            border: 2px solid #FFFFFF;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.8;
         }
     }
 }
