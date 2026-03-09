@@ -17,7 +17,7 @@
             <div class="header__inner">
                 <a href="index.html" class="logo header__logo"><img src="./img/common/logo.svg" alt="TimeTownロゴ"></a>
                 
-                <button class="menu-button" aria-label="ハンバーガーボタン">
+                <button class="menu-button"  id="menuButton" aria-label="メニューを開く">
                     <span class="menu-button__bar"></span>
                     <span class="menu-button__bar"></span>
                     <span class="menu-button__bar"></span>
@@ -25,24 +25,44 @@
             </div> <!-- /.header__inner -->
         </header> <!-- /.header -->
         
-        <nav class="drawer js-drawer">
-            <a href="index.html"><img src="./img/common/logo_white.svg" alt="TimeTownロゴ"></a>
-            
-            <ul class="drawer__list">
-                <li><a href="index.html">top</a></li>
-                <li>
-                    <a href="service.html">service</a>
-                    <ul class="drawer__sub-list">
-                        <li><a href="#">senior marketing consulting</a></li>
-                        <li><a href="#">digital marketing</a></li>
-                        <li><a href="#">tonarino</a></li>
-                        <li><a href="#">blog</a></li>
-                    </ul> <!-- /.drawer__sub-list -->
-                </li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="tonarino.html">となりの</a></li>
-                <li><a href="privacy.html">privacy policy</a></li>
-            </ul> <!-- /.drawer__list -->
+        <nav class="drawer js-drawer" id="drawerNav">
+            <div class="drawer__inner">
+                <a href="index.html" class="drawer__logo">
+                <img src="./img/common/logo_white.svg" alt="TimeTownロゴ">
+                </a>
+                
+                <ul class="drawer__list">
+                    <li class="drawer__item">
+                        <a href="index.html">top</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="service.html">service</a>
+                        <ul class="drawer__sublist">
+                            <li class="drawer__subitem">
+                                <a href="#">senior marketing consulting</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">digital marketing</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">tonarino</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">blog</a>
+                            </li>
+                        </ul> <!-- /.drawer__sublist -->
+                    </li>
+                    <li class="drawer__item">
+                        <a href="contact.html">contact</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="tonarino.html">となりの</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="privacy.html">privacy policy</a>
+                    </li>
+                </ul> <!-- /.drawer__list -->
+            </div> <!-- /.drawer__inner -->
         </nav> <!-- /.drawer -->
 
         <main>
@@ -203,5 +223,6 @@
                 <p>&copy; 2021 TimeTown</p>
             </div> <!-- /.footer__copyright -->
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
