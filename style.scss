@@ -1,12 +1,17 @@
 @charset "UTF-8";
 
+/* ===========================================================
+    Foundation
+=========================================================== */
+
 /* =========================
     Variables
 ========================= */
+
 $header-height: 80px;
 $menu-button-size: 60px;
 $bar-width: 18px;
-$bar-height: 1.5px;
+$bar-height: 2px;
 $bar-gap: 4px;
 $hero-left-width: 550px;
 $hero-right-width: 1187px;
@@ -20,6 +25,7 @@ $background-color2: #F7F9FC;
 /* =========================
     Base
 ========================= */
+
 html {
   box-sizing: border-box;
 }
@@ -42,9 +48,12 @@ body {
 a {
     color: inherit;
 }
-/* =========================
+
+
+
+/* ===========================================================
     Layout
-========================= */
+=========================================================== */
 
 .page-section {
     max-width: 1100px;
@@ -68,71 +77,16 @@ a {
         justify-content: space-between;
         height: 100%;
     }
-}
 
-.drawer {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, $primary-key-color, $gradient-color);
-    transition: right 0.3s ease;
-    z-index: 99;
+    &__logo {
+        display: block;
+        width: 173px;
 
-        &.is-open {
-            right: 0;
+        & img {
+            width: 100%;
+            height: 100%;
         }
-}
-
-
-
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-
-
-    &__left {
-        flex: 0 0 $hero-left-width;
-        background: linear-gradient(to bottom,$primary-key-color,$gradient-color);
-        height: 100%;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 60px;
     }
-
-    &__right {
-        flex: 1;
-        background-image: url('./img/top/mv_pc.jpg');
-        background-size: cover;
-        background-position: center;
-    }
-
-    &__title {
-    color: #FFFFFF;
-    z-index: 3;
-    font-size: 40px;
-    line-height: 1.5;
-    text-shadow: 0px 0px 5px #0E5ED3;
-    }
-  
-    &__description {
-    color: #FFFFFF;
-    z-index: 3;
-    font-size: 16px;
-    line-height: 2.0;
-    font-weight: bold;
-    text-shadow: 0px 0px 5px #0E5ED3;
-    }
-
-}
-
-.mission {
-    background-color: $background-color2;
 }
 
 .footer {
@@ -145,21 +99,59 @@ a {
             padding-top: 60px;
         }
     }
-
+    
     &__nav {
+        color: #FFFFFF;
         background-color: $primary-key-color;
 
         .page-section {
             padding-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        text-transform: uppercase;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__logo {
+            text-decoration: none;
+        }
+
+    &__sublist {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    &__subitem {
+        list-style: none;
+
+        &::before {
+            content: "-";
+            margin-right: 2px;
+            margin-left: -40px;
         }
     }
 
     &__copyright {
         background-color: $primary-key-color;
         padding: 20px 0;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 14px;
     }
 }
-
 
 
 @media (max-width: 895px) {
@@ -200,14 +192,9 @@ a {
 
 
 
-
-
-/* =========================
+/* ===========================================================
     Component
-========================= */
-
-
-
+=========================================================== */
 
 .menu-button {
     width: $menu-button-size;
@@ -217,12 +204,18 @@ a {
     border: none;
     opacity: 0.8;
     transition: opacity 0.3s ease;
-
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    
     display: flex;
     flex-direction: column;
     gap: $bar-gap;
     align-items: center;
     justify-content: center;
+    
+    position: fixed;
+    z-index: 300;
+    top: 20px;
+    right: 20px;
 
     &:hover {
         opacity: 1;
@@ -246,7 +239,7 @@ a {
     text-decoration: none;
     transition: all 0.3s ease;
 
-    :hover {
+    &:hover {
         opacity: 0.8;
     }
 
@@ -309,17 +302,155 @@ a {
     }
 }
 
-.header {
+.drawer {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    
+    color: #FFFFFF;
+    background: linear-gradient(to bottom, $primary-key-color, $gradient-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease;
 
-    &__logo {
-        display: block;
-        width: 173px;
 
-        & img {
-            width: 100%;
-            height: 100%;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 190px;
+    }
+
+    &.page-section {
+            padding-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+
+        .drawer__item {
+            opacity: 1;
+            transform: translateY(0);    
         }
     }
+
+    &__list {
+        list-style: none;
+        text-transform: uppercase;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__item {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.5s ease;
+        font-size: 20px;
+    }
+
+    &__logo {
+            text-decoration: none;
+        }
+
+    &__sublist {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    &__subitem {
+        list-style: none;
+
+        &::before {
+            content: "-";
+            margin-right: 2px;
+            margin-left: -40px;
+        }
+    }
+}
+
+
+
+@media (max-width: 895px) {
+    .menu-button {
+        width: $menu-button-size * 2 / 3;
+        height: $menu-button-size * 2 / 3;
+        
+        &__bar {
+            width: $bar-width * 2 / 3;
+        }
+    }
+
+    .section-header {
+        &__title {
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+
+
+
+/* ============================================================
+    Project
+============================================================ */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+
+    &__left {
+        flex: 0 0 $hero-left-width;
+        background: linear-gradient(to bottom,$primary-key-color,$gradient-color);
+        height: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 60px;
+    }
+
+    &__right {
+        flex: 1;
+        background-image: url('./img/top/mv_pc.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+    color: #FFFFFF;
+    z-index: 3;
+    font-size: 40px;
+    line-height: 1.5;
+    text-shadow: 0px 0px 5px #0E5ED3;
+    }
+  
+    &__description {
+    color: #FFFFFF;
+    z-index: 3;
+    font-size: 16px;
+    line-height: 2.0;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #0E5ED3;
+    }
+
 }
 
 .vision {
@@ -346,6 +477,8 @@ a {
 }
 
 .mission {
+    background-color: $background-color2;
+
 
     &__list {
         list-style: none;
@@ -422,70 +555,11 @@ a {
         }
 }
 
-.footer {
-    
-    &__nav {
-        color: #FFFFFF;
-    
-        a {
-            text-decoration: none;
-        }
-    }
 
-    &__list {
-        list-style: none;
-        text-transform: uppercase;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    &__logo {
-            text-decoration: none;
-        }
-
-    &__sublist {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        font-size: 14px;
-    }
-
-    &__subitem {
-        list-style: none;
-
-        &::before {
-            content: "-";
-            margin-right: 2px;
-            margin-left: -40px;
-        }
-    }
-
-    &__copyright {
-        text-align: center;
-        color: #FFFFFF;
-        font-size: 14px;
-    }
-}
 
 @media (max-width: 895px) {
-    .menu-button {
-        width: $menu-button-size * 2 / 3;
-        height: $menu-button-size * 2 / 3;
-        
-        &__bar {
-            width: $bar-width * 2 / 3;
-        }
-    }
 
-    .section-header {
-        &__title {
-            font-size: 32px;
-            letter-spacing: 5px;
-        }
-    }
+    
 
     .vision {
         &__content {
