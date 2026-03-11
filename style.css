@@ -196,12 +196,11 @@ a {
   width: 60px;
   height: 60px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: #FFFFFF;
-  border: none;
+  border: 1px solid transparent;
   opacity: 0.8;
   transition: opacity 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -211,41 +210,92 @@ a {
 .menu-button:hover {
   opacity: 1;
 }
+.menu-button__hamburger, .menu-button__close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+.menu-button {
+  /* ハンバーガー */
+}
 .menu-button__bar {
-  width: 18px;
+  display: block;
+  width: 20px;
   height: 2px;
   background-color: #236DE3;
-  transition: all 0.4s ease, opacity 0.3s ease;
+  margin: 4px 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+.menu-button {
+  /* × */
+}
+.menu-button__cross {
   position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #FFFFFF;
   top: 50%;
   left: 50%;
-  transform-origin: center;
 }
-.menu-button {
-  /* ボタンが閉じた状態 */
-}
-.menu-button__bar:nth-child(1) {
-  transform: translate(-50%, -12px) rotate(0deg);
-}
-.menu-button__bar:nth-child(2) {
-  transform: translate(-50%, 0) rotate(0deg);
-}
-.menu-button__bar:nth-child(3) {
-  transform: translate(-50%, 12px) rotate(0deg);
-}
-.menu-button {
-  /* ボタンが開いた状態 */
-}
-.menu-button.is-open .menu-button__bar:nth-child(1) {
+.menu-button__cross:nth-child(1) {
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.menu-button.is-open .menu-button__bar:nth-child(2) {
-  opacity: 0;
-}
-.menu-button.is-open .menu-button__bar:nth-child(3) {
+.menu-button__cross:nth-child(2) {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
+.menu-button {
+  /* 初期状態 */
+}
+.menu-button__close {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.menu-button {
+  /* 開いた状態 */
+}
+.menu-button.is-open {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+}
+.menu-button.is-open .menu-button__hamburger {
+  opacity: 0;
+}
+.menu-button.is-open .menu-button__close {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.menu-button {
+  /* 閉じるアニメーション */
+}
+.menu-button.is-close .menu-button__bar:nth-child(1) {
+  animation: barTop 0.4s ease;
+}
+.menu-button.is-close .menu-button__bar:nth-child(3) {
+  animation: barBottom 0.4s ease;
+}
 
+/* 上バー回転 */
+@keyframes barTop {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* 下バー回転 */
+@keyframes barBottom {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .button {
   display: inline-flex;
   align-items: center;
@@ -313,7 +363,7 @@ a {
     height: 40px;
   }
   .menu-button__bar {
-    width: 12px;
+    width: 13.3333333333px;
   }
   .section-header__title {
     font-size: 32px;

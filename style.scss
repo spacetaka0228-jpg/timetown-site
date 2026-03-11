@@ -10,7 +10,7 @@
 
 $header-height: 80px;
 $menu-button-size: 60px;
-$bar-width: 18px;
+$bar-width: 20px;
 $bar-height: 2px;
 $bar-gap: 4px;
 $hero-left-width: 550px;
@@ -254,12 +254,11 @@ a {
     width: $menu-button-size;
     height: $menu-button-size;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: $background-color1;
-    border: none;
+    border: 1px solid transparent;
     opacity: 0.8;
     transition: opacity 0.3s ease;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -270,42 +269,105 @@ a {
         opacity: 1;
     }
 
+    &__hamburger,
+    &__close {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+/* ハンバーガー */
     &__bar {
+        display: block;
         width: $bar-width;
         height: $bar-height;
         background-color: $primary-key-color;
-        transition: all 0.4s ease, opacity 0.3s ease;
+        margin: 4px 0;
+
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+/* × */
+    &__cross {
         position: absolute;
+        width: $bar-width;
+        height: $bar-height;
+        background-color: $background-color1;
+
         top: 50%;
         left: 50%;
-        transform-origin: center;
     }
 
-/* ボタンが閉じた状態 */
-    &__bar:nth-child(1) { 
-        transform: translate(-50%, -12px) rotate(0deg);
+    &__cross:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 
-    &__bar:nth-child(2) { 
-        transform: translate(-50%, 0) rotate(0deg);
+    &__cross:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &__bar:nth-child(3) { 
-            transform: translate(-50%, 12px) rotate(0deg);
-        }
+/* 初期状態 */
+    &__close {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
 
-/* ボタンが開いた状態 */
+/* 開いた状態 */
     &.is-open {
+            background-color: transparent;
+            border: 1px solid $background-color1;
+
+        .menu-button__hamburger {
+            opacity: 0;
+        }
+
+        .menu-button__close {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
+
+/* 閉じるアニメーション */
+    &.is-close {
+        
         .menu-button__bar:nth-child(1) {
-            transform: translate(-50%, -50%) rotate(45deg);
+            animation: barTop 0.4s ease;
         }
-        .menu-button__bar:nth-child(2) {
-            opacity: 0;            
-        }
+
         .menu-button__bar:nth-child(3) {
-            transform: translate(-50%, -50%) rotate(-45deg);
+            animation: barBottom 0.4s ease;
         }
-    }    
+    }
+}
+
+/* 上バー回転 */
+@keyframes barTop {
+    
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* 下バー回転 */
+@keyframes barBottom {
+
+    0% {
+        transform:  rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .button {
