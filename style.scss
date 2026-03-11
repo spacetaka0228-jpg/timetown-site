@@ -160,34 +160,6 @@ a {
             width: 120px;
         }
     }
-
-    .hero {
-        display: block;
-        background-image: url('./img/top/mv_sp.jpg');
-        background-size: cover;
-        background-position: center;
-
-        &__left {
-            background: none;
-            flex: none;
-            width: 100%;
-            display: block;
-            padding: $header-height 0 0 16px;
-        }
-
-        &__right {
-            display: none;
-        }
-
-        &__title {
-            font-size: 32px;
-        }
-
-        &__description {
-            font-size: 14px;
-        }
-    }
-
 }
 
 
@@ -195,112 +167,6 @@ a {
 /* ===========================================================
     Component
 =========================================================== */
-
-.menu-button {
-    width: $menu-button-size;
-    height: $menu-button-size;
-    border-radius: 50%;
-    background-color: $background-color1;
-    border: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    
-    display: flex;
-    flex-direction: column;
-    gap: $bar-gap;
-    align-items: center;
-    justify-content: center;
-    
-    position: fixed;
-    z-index: 300;
-    top: 20px;
-    right: 20px;
-
-    &:hover {
-        opacity: 1;
-    }
-
-    &__bar {
-        width: $bar-width;
-        height: $bar-height;
-        background-color: $primary-key-color;
-        
-    }
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 0;
-    border-radius: 50px;
-    border: 2px solid transparent;
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    &:hover {
-        opacity: 0.8;
-    }
-
-    &--full {
-        display: flex;
-    }
-
-    &--white {
-        background-color: #FFFFFF;
-        color: $primary-key-color;
-        font-weight: bold;
-
-        &:hover {
-            background-color: $primary-key-color;
-            color: #FFFFFF;
-            border: 2px solid #FFFFFF;
-        }
-    }
-}
-
-.section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0px;
-    margin-bottom: 40px;
-
-    &__title {
-        font-size: 50px;
-        font-family: 'Lato', sans-serif;
-        font-weight: 900;
-        color: $primary-key-color;
-        text-transform: uppercase;
-        letter-spacing: 10px;
-        margin: 0;
-    }
-
-    &__lead {
-        font-weight: bold;
-        font-family: 'Lato', sans-serif;
-        font-size: 14px;
-
-        &::before {
-            content: "ー";
-            font-weight: normal;
-            margin-right: 4px;
-
-        }
-    }
-
-    &--white {
-        .section-header__title,
-        .section-header__lead {
-            color: #FFFFFF;
-        }
-
-        .section-header__lead::before {
-            content: "";
-        }
-    }
-}
 
 .drawer {
     position: fixed;
@@ -377,6 +243,140 @@ a {
             content: "-";
             margin-right: 2px;
             margin-left: -40px;
+        }
+    }
+}
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: $menu-button-size;
+    height: $menu-button-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $background-color1;
+    border: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: pointer; 
+    z-index: 300;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &__bar {
+        width: $bar-width;
+        height: $bar-height;
+        background-color: $primary-key-color;
+        transition: all 0.4s ease, opacity 0.3s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+/* ボタンが閉じた状態 */
+    &__bar:nth-child(1) { 
+        transform: translate(-50%, -12px) rotate(0deg);
+    }
+
+    &__bar:nth-child(2) { 
+        transform: translate(-50%, 0) rotate(0deg);
+    }
+
+    &__bar:nth-child(3) { 
+            transform: translate(-50%, 12px) rotate(0deg);
+        }
+
+/* ボタンが開いた状態 */
+    &.is-open {
+        .menu-button__bar:nth-child(1) {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .menu-button__bar:nth-child(2) {
+            opacity: 0;            
+        }
+        .menu-button__bar:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }    
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &--full {
+        display: flex;
+    }
+
+    &--white {
+        background-color: #FFFFFF;
+        color: $primary-key-color;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $primary-key-color;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+        }
+    }
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 50px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+        color: $primary-key-color;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        margin: 0;
+    }
+
+    &__lead {
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+
+        &::before {
+            content: "ー";
+            font-weight: normal;
+            margin-right: 4px;
+
+        }
+    }
+
+    &--white {
+        .section-header__title,
+        .section-header__lead {
+            color: #FFFFFF;
+        }
+
+        .section-header__lead::before {
+            content: "";
         }
     }
 }
@@ -559,7 +559,32 @@ a {
 
 @media (max-width: 895px) {
 
-    
+    .hero {
+        display: block;
+        background-image: url('./img/top/mv_sp.jpg');
+        background-size: cover;
+        background-position: center;
+
+        &__left {
+            background: none;
+            flex: none;
+            width: 100%;
+            display: block;
+            padding: $header-height 0 0 16px;
+        }
+
+        &__right {
+            display: none;
+        }
+
+        &__title {
+            font-size: 32px;
+        }
+
+        &__description {
+            font-size: 14px;
+        }
+    }
 
     .vision {
         &__content {
