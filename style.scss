@@ -153,6 +153,46 @@ a {
     }
 }
 
+.about {
+        position: relative;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+
+
+    &__circle {
+        position: absolute;
+        z-index: -1;
+    
+        &--1 {
+            width: 20vw;
+            top: 50px;
+            left: -5vw;
+        }
+
+        &--2 {
+            width: 25vw;
+            top: 300px;
+            right: -5vw;
+        }
+
+        &--3 {
+            width: 30vw;
+            top: 600px;
+            left: -5vw;
+        }
+
+        &--4 {
+            width: 30vw;
+            top: 1200px;
+            right: -5vw;
+        }
+    }
+
+
+}
+
 
 @media (max-width: 895px) {
     .header {
@@ -185,9 +225,14 @@ a {
 
     &__inner {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 190px;
+        flex-direction: column;;
+        
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 150px;
+        padding: 0 150px;
+        text-align: left;
     }
 
     &.page-section {
@@ -208,20 +253,31 @@ a {
         }
     }
 
+    &__logo {
+        margin-bottom: 40px;
+        width: 250px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     &__list {
         list-style: none;
         text-transform: uppercase;
         padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 60px;
     }
 
     &__item {
         opacity: 0;
         transform: translateY(-10px);
         transition: all 0.5s ease;
-        font-size: 20px;
+        font-size: 25px;
+        font-weight: bold;
     }
 
     &__logo {
@@ -232,12 +288,17 @@ a {
         margin-top: 20px;
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        font-size: 14px;
+        gap: 30px;
+        font-size: 20px;
+
+        .drawer__subitem:first-child {
+            margin-top: 20px;
+        }
     }
 
     &__subitem {
         list-style: none;
+        font-weight: lighter;
 
         &::before {
             content: "-";
@@ -446,13 +507,36 @@ a {
 
 
 @media (max-width: 895px) {
+
+    .drawer {
+        &__inner {
+            max-width: 400px;
+            padding: 0 30px; 
+            margin: 0 auto;
+            margin-top: 80px; 
+        }
+
+        &__logo {
+            width: 150px;
+        }
+
+        &__list {
+            gap: 30px;
+        }
+
+        &__item {
+            font-size: 20px;
+        }
+
+        &__subitem {
+            font-size: 15px;
+        }
+    
+    }
+
     .menu-button {
         width: $menu-button-size * 2 / 3;
         height: $menu-button-size * 2 / 3;
-        
-        &__bar {
-            width: $bar-width * 2 / 3;
-        }
     }
 
     .section-header {
@@ -539,8 +623,15 @@ a {
 }
 
 .mission {
-    background-color: $background-color2;
+    position: relative;
 
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $background-color2;
+        z-index: -2;
+    }
 
     &__list {
         list-style: none;
@@ -604,7 +695,7 @@ a {
     &__term {
         font-weight: bold;
     }
-    
+
     &__term,
     &__description {
         letter-spacing: 1.5px;
@@ -652,6 +743,40 @@ a {
         &__content {
             display: block;
         }
+
+        &__text {
+            font-size: 14px;
+        }
     }
 
+    .mission {
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__signature {
+            font-size: 13px;
+        }
+
+        &__signature-name {
+            font-size: 22px;
+        }
+    }
+
+    .company {
+
+        &__term,
+        &__description {
+            font-size: 14px;
+        }
+
+        &__description {
+            margin-left: 3px;
+        }
+
+        &__list {
+           padding-left: 18px;
+        }
+    }
 }
