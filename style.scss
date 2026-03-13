@@ -62,11 +62,27 @@ a {
     padding: 120px 80px 80px 80px;
 }
 
+.page-title {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, $primary-key-color, $gradient-color);
+    color: $background-color1;
+}
+
 .header {
     width: 100%;
     height: $header-height;
-    position: fixed;
     z-index: 100;
+    
+    &--fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 
     &__inner {
         max-width: 1366px;
@@ -222,6 +238,8 @@ a {
     background: linear-gradient(to bottom, $primary-key-color, $gradient-color);
     opacity: 0;
     transition: opacity 0.3s ease;
+    visibility: hidden;
+    pointer-events: none;
 
 
     &__inner {
@@ -247,9 +265,11 @@ a {
     &.is-open {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
 
         .drawer__item {
             opacity: 1;
+            visibility: visible;
             transform: translateX(0);
 
             &:nth-child(1) {
