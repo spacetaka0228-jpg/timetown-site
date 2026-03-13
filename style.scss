@@ -71,6 +71,16 @@ a {
     justify-content: center;
     background: linear-gradient(to bottom, $primary-key-color, $gradient-color);
     color: $background-color1;
+
+    &__title,
+    &__sibtitle {
+        font-family: "Noto Sans JP", sans-serif;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
 }
 
 .header {
@@ -211,6 +221,19 @@ a {
 
 
 @media (max-width: 895px) {
+
+    .page-title {
+        height: 150px;
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__subtitle {
+            font-size: 12px;
+        }
+    }
+
     .header {
         &__logo {
             width: 120px;
@@ -350,7 +373,7 @@ a {
 
 .menu-button {
     position: fixed;
-    top: 20px;
+    top: 15px;
     right: 20px;
     width: $menu-button-size;
     height: $menu-button-size;
@@ -750,6 +773,66 @@ a {
 
 
 
+.policy {
+    letter-spacing: 1.5px;
+    line-height: 30px;
+
+    .page-section {
+        padding-top: 80px;
+    }
+
+    a {
+        color: $primary-key-color;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.policy-section {
+
+    &__title {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+
+        .policy-section__item{
+            position: relative;
+            padding-left: 1.5em;
+        
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.6em;
+                width: 0.7em;
+                height: 0.7em;
+                background: #000000;
+            }
+        }
+    }
+
+    &__sublist {
+        list-style-type: disc;
+    }
+}
+
+.update {
+
+    &__item {
+
+        a {
+            display: block;
+        }
+    }
+}
+
+
 @media (max-width: 895px) {
 
     .hero {
@@ -817,6 +900,25 @@ a {
 
         &__list {
            padding-left: 18px;
+        }
+    }
+
+    .policy {
+
+        &__text {
+            font-size: 14px;
+        }
+
+        .page-section {
+            padding: 20px 40px;
+        }
+
+        .policy-section {
+            font-size: 14px;;
+
+            &__title {
+                font-size: 20px;
+            }
         }
     }
 }

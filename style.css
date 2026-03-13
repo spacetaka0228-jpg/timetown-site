@@ -51,6 +51,13 @@ a {
   background: linear-gradient(to bottom, #236DE3, #6EE2F5);
   color: #FFFFFF;
 }
+.page-title__title, .page-title__sibtitle {
+  font-family: "Noto Sans JP", sans-serif;
+}
+.page-title__title {
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
 
 .header {
   width: 100%;
@@ -163,6 +170,15 @@ a {
 }
 
 @media (max-width: 895px) {
+  .page-title {
+    height: 150px;
+  }
+  .page-title__title {
+    font-size: 18px;
+  }
+  .page-title__subtitle {
+    font-size: 12px;
+  }
   .header__logo {
     width: 120px;
   }
@@ -274,7 +290,7 @@ a {
 
 .menu-button {
   position: fixed;
-  top: 20px;
+  top: 15px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -598,6 +614,49 @@ a {
   line-height: 1.8;
 }
 
+.policy {
+  letter-spacing: 1.5px;
+  line-height: 30px;
+}
+.policy .page-section {
+  padding-top: 80px;
+}
+.policy a {
+  color: #236DE3;
+}
+.policy a:hover {
+  cursor: pointer;
+}
+
+.policy-section__title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.policy-section__list {
+  list-style-type: none;
+  padding: 0;
+}
+.policy-section__list .policy-section__item {
+  position: relative;
+  padding-left: 1.5em;
+}
+.policy-section__list .policy-section__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.7em;
+  height: 0.7em;
+  background: #000000;
+}
+.policy-section__sublist {
+  list-style-type: disc;
+}
+
+.update__item a {
+  display: block;
+}
+
 @media (max-width: 895px) {
   .hero {
     display: block;
@@ -644,5 +703,17 @@ a {
   }
   .company__list {
     padding-left: 18px;
+  }
+  .policy__text {
+    font-size: 14px;
+  }
+  .policy .page-section {
+    padding: 20px 40px;
+  }
+  .policy .policy-section {
+    font-size: 14px;
+  }
+  .policy .policy-section__title {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
