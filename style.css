@@ -53,6 +53,7 @@ a {
 }
 .page-title__title, .page-title__sibtitle {
   font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 3px;
 }
 .page-title__title {
   margin-bottom: 0;
@@ -174,10 +175,10 @@ a {
     height: 150px;
   }
   .page-title__title {
-    font-size: 18px;
+    font-size: 30px;
   }
   .page-title__subtitle {
-    font-size: 12px;
+    font-size: 16px;
   }
   .header__logo {
     width: 120px;

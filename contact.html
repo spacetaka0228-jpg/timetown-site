@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TimeTown</title>
+        <!-- normalize.css のCDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- Google Fonts のLatoフォント -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header class="header">
+            <div class="header__inner">
+                <a href="index.html" class="logo header__logo"><img src="./img/common/logo.svg" alt="TimeTownロゴ"></a>
+            </div> <!-- /.header__inner -->
+        </header> <!-- /.header -->
+
+        <nav class="drawer js-drawer" id="drawerNav">
+            <div class="drawer__inner">
+                <a href="index.html" class="drawer__logo">
+                <img src="./img/common/logo_white.svg" alt="TimeTownロゴ">
+                </a>
+                
+                <ul class="drawer__list">
+                    <li class="drawer__item">
+                        <a href="index.html">top</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="service.html">service</a>
+                        <ul class="drawer__sublist">
+                            <li class="drawer__subitem">
+                                <a href="#">senior marketing consulting</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">digital marketing</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">tonarino</a>
+                            </li>
+                            <li class="drawer__subitem">
+                                <a href="#">blog</a>
+                            </li>
+                        </ul> <!-- /.drawer__sublist -->
+                    </li>
+                    <li class="drawer__item">
+                        <a href="contact.html">contact</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="tonarino.html">となりの</a>
+                    </li>
+                    <li class="drawer__item">
+                        <a href="policy.html">privacy policy</a>
+                    </li>
+                </ul> <!-- /.drawer__list -->
+            </div> <!-- /.drawer__inner -->
+        </nav> <!-- /.drawer -->
+
+        <button class="menu-button"  id="menuButton" aria-label="メニューを開く">
+
+            <!-- ハンバーガー -->
+            <span class="menu-button__hamburger">
+                <span class="menu-button__bar"></span>
+                <span class="menu-button__bar"></span>
+                <span class="menu-button__bar"></span>
+            </span>
+
+            <!-- × -->
+            <span class="menu-button__close">
+                <span class="menu-button__cross"></span>
+                <span class="menu-button__cross"></span>
+            </span>
+
+        </button> <!-- /.menu-button -->
+
+        <main class="contact">
+            
+            <div class="page-title">
+                <h1 class="page-title__title">
+                    Contact
+                </h1>
+                <p class="page-title__subtitle">お問合わせ</p>
+            </div> <!-- /.page__title -->
+            
+            <form class="contact-form page-section">
+                
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="inquiry_type">
+                        お問合せ内容<span class="cotact-form__required">※必須</span>
+                    </label>
+                    <select id="inquiry_type" name="inquiry_type">
+                        <option value="service">サービス内容についてのお問合せ</option>
+                        <option value="application">サービスのお申込み</option>
+                        <option value="partner">外部パートナーのお問合せ</option>
+                        <option value="appearance">メディアの掲載について</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__radio">
+                    <p class="contact-form__label">個人・法人</p>
+                        
+                    <label>
+                        <input type="radio" name="user-type" value="individual">
+                        個人
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="user-type" value="corporation">
+                        法人
+                    </label>
+                </div> <!-- /.contact-form__radio -->
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="comapny">
+                        企業名
+                    </label>   
+                    
+                     <input class="contact-form__input" id="company" name="company">
+                    
+                </div> <!-- /.contact-form__item -->
+
+               <div class="contact-form__item">
+                    <label class="contact-form__label" for="name">
+                        氏名<span class="contact-form__required">※必須</span>
+                    </label>   
+                    
+                     <input class="contact-form__input" id="name" name="name">
+                    
+                </div> <!-- /.contact-form__item -->
+ 
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="kana">
+                        ふりがな
+                    </label>   
+                    
+                     <input class="contact-form__input" id="kana" name="kana">
+                    
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="number">
+                        電話番号(半角)
+                    </label>   
+                    
+                     <input class="contact-form__input" id="number" name="number">
+                    
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="email">
+                        メールアドレス<span class="contact-form__required">※必須</span>
+                    </label>   
+                    
+                     <input class="contact-form__input" id="email" name="email">
+                    
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="email_confirm">
+                        メールアドレス(確認)<span class="contact-form__required">※必須</span>
+                    </label>   
+                    
+                     <input class="contact-form__input" id="email_confirm" name="email_confirm">
+                    
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="message">
+                        お問合せ内容<span class="contact-form__required">※必須</span>
+                    </label>   
+                    
+                     <textarea class="contact-form__input" id="message" name="message" rows="6">
+                     </textarea>
+                    
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__item">
+                    <p class="contact-form__label">
+                        プライバシーポリシー<span class="contact-form__required">※必須</span>
+                    </p>
+
+                    <div class="content-form__policy">
+                        <p>
+                            個人情報の保護について
+                        </p>
+                        <p>
+                            当サイトに属するウェブサイトを利用する事で、貴方は以下に記載する個人情報保護についての諸条件に同意した事になります。 
+                            これらの諸条件に同意できない場合は、当社ウェブサイトをご利用になる事ができません。
+                        </p>
+                        <p>
+                            個人情報の収集
+                        </p>
+                        <p>
+                            貴方は当社ウェブサイトを閲覧するにあたり、ご自身に関するいかなる情報も開示する必要はありません。 
+                            貴方は匿名のままで、当社ウェブサイトを自由に閲覧する事ができます。 
+                            しかし、場合により貴方の氏名やメールアドレスなどの個人情報の開示をお願いする事があります（例：当社へのお問い合わせの際など）。
+                             しかし、貴方から当社へ個人情報を送信された場合、当社はあなたの個人情報を貴方の許可なく、第三者へ開示・共有する事はありません。
+                        </p>
+                        <p>
+                            Cookiesの使用
+                        </p>
+                        <p>
+                            当サイトでは、一部のコンテンツについてCookie（クッキー）を利用しています。
+                             Cookieとは、サイトにアクセスした際にブラウザに保存される情報ですが、お名前やメールアドレス等の個人情報は含まれません。 
+                             当サイトにアクセスいただいた方々に効果的な広告を配信するためやアクセス解析にCookieの情報を利用させていただく場合があります。
+                              ブラウザの設定により、Cookieを使用しないようにすることも可能です。
+                        </p>
+                    </div> <!-- /.content-form__policy -->
+
+                    <label class="content-form__checkbox">
+                        <input type="checkbox" name="privacy" required>
+                        プライバシーポリシーに同意する
+                    </label>
+                </div> <!-- /.contact-form__item -->
+
+                <div class="contact-form__submit">
+                    <button class="contact-form__submit" type="submit">
+                        確認する
+                    </button>
+                </div> <!-- /.contact-form__submit -->
+            </form> <!-- /.form__content -->
+        </main>
+
+        <footer>    
+            <section class="footer__contact">
+                <div class="page-section">
+                    <div class="section-header section-header--white">
+                        <h2 class="section-header__title">Contact</h2>
+                        <p class="section-header__lead">お問合わせはメールフォームより受け付けております。お気軽にご連絡ください。</p>
+                    </div> <!-- /.section-header -->
+                <a href="contact.html" class="button button--white button--full">お問合わせはこちら</a>
+                </div> <!-- /.page-section -->
+            </section> <!-- /.footer__contact -->
+  
+            <nav class="footer__nav">
+                <div class="page-section">
+                    <a href="index.html" class="footer__logo">
+                        <img src="img/common/logo_white.svg" alt="TimeTownロゴ">
+                    </a>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="index.html">top</a>
+                        </li>
+                        <li class="footer__item footer__item--service">
+                            <a href="service.html">service</a>
+                            <ul class="footer__sublist">
+                                <li class="footer__subitem">
+                                    <a href="service1.html">senior marketing consulting</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="service2.html">digital marketing</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="service3.html">tonarino</a>
+                                </li>
+                                <li class="footer__subitem">
+                                    <a href="service4.html">blog</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer__item">
+                            <a href="contact.html">contact</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="policy.html">privacy policy</a>
+                        </li>
+                    </ul>
+                </div> <!-- /.page-section -->
+            </nav> <!-- /.footer__nav -->
+            
+            <div class="footer__copyright">
+                <p>&copy; 2021 TimeTown</p>
+            </div> <!-- /.footer__copyright -->
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
