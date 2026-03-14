@@ -309,6 +309,8 @@ a {
 }
 .menu-button:hover {
   opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 .menu-button__hamburger, .menu-button__close {
   position: absolute;
@@ -402,7 +404,7 @@ a {
   justify-content: center;
   padding: 25px 0;
   border-radius: 50px;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -420,7 +422,18 @@ a {
 .button--white:hover {
   background-color: #236DE3;
   color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  border: 3px solid #FFFFFF;
+}
+.button--gradient {
+  background: linear-gradient(to right, #236DE3, #6EE2F5) padding-box, linear-gradient(to right, #236DE3, #6EE2F5) border-box;
+  width: 320px;
+  color: #FFFFFF;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+.button--gradient:hover {
+  background: linear-gradient(to right, #fff, #fff) padding-box, linear-gradient(to right, #236DE3, #6EE2F5) border-box;
+  color: #236DE3;
 }
 
 .section-header {
@@ -457,6 +470,66 @@ a {
   content: "";
 }
 
+.contact-form__item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.contact-form__label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.contact-form__input, .contact-form__select, .contact-form__textarea, .contact-form__policy {
+  height: 60px;
+  background-color: #F7F9FC;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+.contact-form__required {
+  margin-left: 10px;
+  color: red;
+}
+.contact-form__textarea {
+  height: 150px;
+}
+.contact-form__policy {
+  height: 180px;
+  overflow-y: auto;
+}
+.contact-form__checkbox {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  align-self: flex-start;
+}
+.contact-form__checkbox input {
+  display: none;
+}
+.contact-form__checkbox input:checked + .contact-form__checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #236DE3;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.contact-form__checkmark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+.contact-form__submit {
+  margin-top: 60px;
+}
+
 @media (max-width: 895px) {
   .drawer__inner {
     max-width: 400px;
@@ -483,6 +556,9 @@ a {
   .section-header__title {
     font-size: 32px;
     letter-spacing: 5px;
+  }
+  .contact-form {
+    padding: 40px 32px;
   }
 }
 /* ============================================================

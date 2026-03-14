@@ -392,6 +392,8 @@ a {
 
     &:hover {
         opacity: 1;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
     }
 
     &__hamburger,
@@ -501,7 +503,7 @@ a {
     justify-content: center;
     padding: 25px 0;
     border-radius: 50px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     text-decoration: none;
     transition: all 0.3s ease;
 
@@ -521,7 +523,22 @@ a {
         &:hover {
             background-color: $primary-key-color;
             color: #FFFFFF;
-            border: 2px solid #FFFFFF;
+            border: 3px solid #FFFFFF;
+        }
+    }
+
+    &--gradient {
+        background: linear-gradient(to right,$primary-key-color,$gradient-color) padding-box,
+        linear-gradient(to right,$primary-key-color,$gradient-color) border-box;
+        width: 320px;
+        color: $background-color1;
+        font-weight: bold;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background: linear-gradient(to right,#fff,#fff) padding-box,
+            linear-gradient(to right,$primary-key-color,$gradient-color) border-box;
+            color: $primary-key-color;
         }
     }
 }
@@ -568,6 +585,82 @@ a {
     }
 }
 
+.contact-form {
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    &__label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    &__input,
+    &__select,
+    &__textarea,
+    &__policy {
+        height: 60px;
+        background-color: $background-color2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+
+    &__required {
+        margin-left: 10px;
+        color: red;
+    }
+
+    &__textarea {
+        height: 150px;
+    }
+
+    &__policy {
+        height: 180px;
+        overflow-y: auto;
+    }
+
+    &__checkbox {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 10px;
+        align-self: flex-start;
+
+        input {
+            display: none;
+        }
+
+        input:checked + .contact-form__checkmark::after {
+            content:"";
+            position:absolute;
+            left:5px;
+            top:2px;
+            width:6px;
+            height:12px;
+            border:solid #236DE3;
+            border-width:0 2px 2px 0;
+            transform:rotate(45deg);
+        }
+    }
+
+    &__checkmark {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    &__submit {
+        margin-top: 60px;
+    }
+}
+
 
 
 @media (max-width: 895px) {
@@ -608,6 +701,10 @@ a {
             font-size: 32px;
             letter-spacing: 5px;
         }
+    }
+
+    .contact-form {
+        padding: 40px 32px;
     }
 }
 

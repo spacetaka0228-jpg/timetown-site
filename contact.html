@@ -91,7 +91,7 @@
                     <label class="contact-form__label" for="inquiry_type">
                         お問合せ内容<span class="cotact-form__required">※必須</span>
                     </label>
-                    <select id="inquiry_type" name="inquiry_type">
+                    <select id="inquiry_type" name="inquiry_type" class="contact-form__select">
                         <option value="service">サービス内容についてのお問合せ</option>
                         <option value="application">サービスのお申込み</option>
                         <option value="partner">外部パートナーのお問合せ</option>
@@ -173,7 +173,7 @@
                         お問合せ内容<span class="contact-form__required">※必須</span>
                     </label>   
                     
-                     <textarea class="contact-form__input" id="message" name="message" rows="6">
+                     <textarea class="contact-form__textarea" id="message" name="message" rows="6">
                      </textarea>
                     
                 </div> <!-- /.contact-form__item -->
@@ -183,7 +183,7 @@
                         プライバシーポリシー<span class="contact-form__required">※必須</span>
                     </p>
 
-                    <div class="content-form__policy">
+                    <div class="contact-form__policy">
                         <p>
                             個人情報の保護について
                         </p>
@@ -211,14 +211,15 @@
                         </p>
                     </div> <!-- /.content-form__policy -->
 
-                    <label class="content-form__checkbox">
+                    <label class="contact-form__checkbox">
                         <input type="checkbox" name="privacy" required>
+                        <span class="contact-form__checkmark"></span>
                         プライバシーポリシーに同意する
                     </label>
                 </div> <!-- /.contact-form__item -->
 
                 <div class="contact-form__submit">
-                    <button class="contact-form__submit" type="submit">
+                    <button class="contact-form__button button button--gradient" type="submit">
                         確認する
                     </button>
                 </div> <!-- /.contact-form__submit -->
