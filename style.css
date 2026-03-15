@@ -734,6 +734,16 @@ a {
   display: block;
 }
 
+.consulting__catch, .consulting__lead {
+  font-weight: bold;
+}
+.consulting__catch {
+  font-size: 22px;
+}
+.consulting__lead {
+  font-size: 18px;
+}
+
 @media (max-width: 895px) {
   .hero {
     display: block;
